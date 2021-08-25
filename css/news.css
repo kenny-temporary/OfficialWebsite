@@ -1,0 +1,14 @@
+.news-card:hover {
+    cursor: pointer;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+}
+
+.news-main-container-maintop {
+    margin-top: calc(56px + 70px + 1.5rem);
+}
+
+.disable-click {
+	pointer-events: none;
+	cursor: not-allowed;
+	color: #eee;
+}
