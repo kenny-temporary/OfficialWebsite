@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./plugins/bootstrap/bootstrap.min.css" />
+    <script
+      type="text/javascript"
+      src="./plugins/jquery/jquery.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="./plugins/bootstrap/bootstrap.bundle.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="./plugins/popper/popper.min.js"
+    ></script>
+
+    <link rel="stylesheet" href="./css/common.css" />
+    <title>首页</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+      <div class="container">
+        <a href="#" class="navbar-brand">复仇者联盟</a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navmenu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navmenu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/index.html">
+                <i class="fas fa-rupee-sign fa-2x d-md-none pr-2"></i>
+                首页
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/news.html">
+                <i class="fas fa-rupee-sign fa-2x d-md-none pr-2"></i>
+                新闻
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/about.html">
+                <i class="fas fa-rupee-sign fa-2x d-md-none pr-2"></i>
+                关于我们
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section class="container-fluid main-container-maintop">
+      <div
+        id="carouselExampleControls"
+        class="carousel slide bg-gray"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleControls"
+            data-bs-slide-to="0"
+            class="active indicators"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            class="indicators"
+            data-bs-target="#carouselExampleControls"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            class="indicators"
+            data-bs-target="#carouselExampleControls"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+        </div>
+
+        <div class="carousel-inner">
+          <div class="carousel-item active slick-container">
+            <img
+              src="https://static.runoob.com/images/mix/img_mountains_wide.jpg"
+            />
+          </div>
+          <div class="carousel-item slick-container">
+            <img
+              src="https://static.runoob.com/images/mix/img_nature_wide.jpg"
+            />
+          </div>
+          <div class="carousel-item slick-container">
+            <img
+              src="https://static.runoob.com/images/mix/img_nature_wide.jpg"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container-fluid mt-5">
+      <div class="container">
+        <h2 class="text-center">服务范围</h2>
+        <div class="row pt-3 pb-3 g-2 bg-gray mt-5">
+          <div class="col-sm-6 col-md-3">
+            <div class="card border-gray">
+              <div class="card-body text-center bg-gray">
+                <div class="col-md">
+                  <img
+                    src="images/01-man.jpeg"
+                    alt="1"
+                    class="img-fluid rounded-circle"
+                  />
+                </div>
+                <div class="card-title mt-2">拯救地球</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <div class="card border-gray">
+              <div class="card-body text-center bg-gray">
+                <div class="col-md">
+                  <img
+                    src="images/01-man.jpeg"
+                    alt="1"
+                    class="img-fluid rounded-circle"
+                  />
+                </div>
+                <div class="card-title mt-2">英雄合照</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <div class="card border-gray">
+              <div class="card-body text-center bg-gray">
+                <div class="col-md">
+                  <img
+                    src="images/01-man.jpeg"
+                    alt="1"
+                    class="img-fluid rounded-circle"
+                  />
+                </div>
+                <div class="card-title mt-2">寻找原石</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <div class="card border-gray">
+              <div class="card-body text-center bg-gray">
+                <div class="col-md">
+                  <img
+                    src="images/01-man.jpeg"
+                    alt="1"
+                    class="img-fluid rounded-circle"
+                  />
+                </div>
+                <div class="card-title mt-2">宇宙之旅</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container-fluid mt-5">
+      <div class="container">
+        <h2 class="text-center">团队介绍</h2>
+        <div class="row justify-content-between characters-container mt-5">
+          <div class="col-md">
+            <img src="./images/01.jpeg" alt="1" class="img-fluid" />
+          </div>
+          <div class="col-md characters-content">
+            <div>
+              <h5 class="text-center">托尼</h5>
+              <p class="lead">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Praesentium ea ratione corporis et provident. Quia!
+              </p>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet
+                nostrum, aperiam assumenda vitae, beatae at sint quaerat
+                consequatur maxime, hic voluptatum ex. Dolor minus perferendis
+                magni autem exercitationem quis quos.
+              </p>
+            </div>
+
+            <div class="mb-4">
+              <div class="dropdown-divider"></div>
+              <p class="mt-4">
+                能力：Reprehenderit duis elit Lorem mollit do duis enim
+                culpa.Reprehenderit duis elit Lorem mollit do duis enim culpa.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row justify-content-between characters-container">
+          <div class="col-md characters-content" id="first">
+            <div>
+              <h5 class="text-center">美国队长</h5>
+              <p class="lead">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Praesentium ea ratione corporis et provident. Quia!
+              </p>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet
+                nostrum, aperiam assumenda vitae, beatae at sint quaerat
+                consequatur maxime, hic voluptatum ex. Dolor minus perferendis
+                magni autem exercitationem quis quos.
+              </p>
+            </div>
+            <div class="mb-4">
+              <div class="dropdown-divider"></div>
+              <p class="mt-4">
+                能力：Reprehenderit duis elit Lorem mollit do duis enim
+                culpa.Reprehenderit duis elit Lorem mollit do duis enim culpa.
+              </p>
+            </div>
+          </div>
+          <div class="col-md" id="second">
+            <img src="./images/02.png" alt="1" class="img-fluid" />
+          </div>
+        </div>
+
+        <div class="row justify-content-between characters-container">
+          <div class="col-md">
+            <img src="images/03.jpeg" alt="1" class="img-fluid" />
+          </div>
+          <div class="col-md characters-content">
+            <div>
+              <h5 class="text-center">黑寡妇</h5>
+              <p class="lead">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Praesentium ea ratione corporis et provident. Quia!
+              </p>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet
+                nostrum, aperiam assumenda vitae, beatae at sint quaerat
+                consequatur maxime, hic voluptatum ex. Dolor minus perferendis
+                magni autem exercitationem quis quos.
+              </p>
+            </div>
+            <div class="mb-4">
+              <div class="dropdown-divider"></div>
+              <p class="mt-4">
+                能力：Reprehenderit duis elit Lorem mollit do duis enim
+                culpa.Reprehenderit duis elit Lorem mollit do duis enim culpa.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="my-5">
+      <div class="container">
+        <h2 class="text-center mb-5">新闻动态</h2>
+        <div class="row g-4 justify-content-between">
+          <div class="col-md-6 col-lg-3">
+            <div class="card card-clear">
+              <div class="card-body card-body-clear">
+                <img src="img/01-man.jpeg" class="mb-3" />
+                <p class="card-text">
+                  这是一个测试新闻上电视了蛋黄酥是否是不会放寒假上飞机后不后悔啥都不会睡觉的还是不胜负荷
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="card card-clear">
+              <div class="card-body card-body-clear">
+                <img src="img/02-man.jpeg" class="mb-3" />
+                <p class="card-text">
+                  这是一个测试新闻上电视了蛋黄酥是否是不会放寒假上飞机后不后悔啥都不会睡觉的还是不胜负荷
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="card card-clear">
+              <div class="card-body card-body-clear">
+                <img src="img/03-man.jpeg" class="mb-3" />
+                <p class="card-text">
+                  这是一个测试新闻上电视了蛋黄酥是否是不会放寒假上飞机后不后悔啥都不会睡觉的还是不胜负荷
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="card card-clear">
+              <div class="card-body card-body-clear">
+                <img src="img/01-man.jpeg" class="mb-3" />
+                <p class="card-text">
+                  这是一个测试新闻上电视了蛋黄酥是否是不会放寒假上飞机后不后悔啥都不会睡觉的还是不胜负荷
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

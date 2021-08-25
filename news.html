@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./plugins/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/common.css" />
+    <title>新闻页</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+      <div class="container">
+        <a href="#" class="navbar-brand">复仇者联盟</a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navmenu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navmenu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/index.html">
+                <i class="fas fa-rupee-sign fa-2x d-md-none pr-2"></i>
+                首页
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/news.html">
+                <i class="fas fa-rupee-sign fa-2x d-md-none pr-2"></i>
+                新闻
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/about.html">
+                <i class="fas fa-rupee-sign fa-2x d-md-none pr-2"></i>
+                关于我们
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section class="container-fluid main-container-maintop">
+      <div class="container mt-4">
+        <ul class="row news-container"></ul>
+      </div>
+    </section>
+  </body>
+  <script
+    type="text/javascript"
+    src="./plugins/bootstrap/bootstrap.bundle.min.js"
+  ></script>
+
+  <script>
+    const defaultTemplate = `
+            <div class="row">
+              <div class="col-lg-4 col-md-12">
+                <img src="./images/03.jpeg" class="img-fluid safe-image" />
+              </div>
+              <div class="col-lg-8 col-md-12" style="padding-left: 1.2rem">
+                <div class="lead">
+                  Irure commodo consectetur ex sit nostrud sunt labore sint
+                </div>
+                <div class="dropdown-divider"></div>
+                <p>
+                  Ut in laborum est tempor id. Anim nostrud nostrud id magna
+                  laboris Lorem consequat do consequat consectetur excepteur
+                  deserunt proident. Occaecat adipisicing ullamco occaecat magna
+                  voluptate ipsum amet est ex.
+                </p>
+              </div>
+            </div>
+          `;
+
+    function generateNewsDocumentFragment(
+      dataList = [],
+      options = {
+        classnames: "",
+      }
+    ) {
+      const fragment = document.createDocumentFragment();
+      dataList.forEach((data) => {
+        const newsItemNode = generateNewsItemNode(data, options);
+        fragment.appendChild(generateNewsItemNode(data, options));
+      });
+      return fragment;
+    }
+
+    function generateNewsItemNode(newsItem = {}, options = {}) {
+      const li = document.createElement("li");
+      if (options.classnames) {
+        injecteClassname(options.classnames, li);
+      }
+      li.innerHTML = newsItemTemplate(newsItem);
+      return li;
+    }
+
+    function newsItemTemplate(data = {}) {
+      const sourceTemplate = data.tempalte || defaultTemplate;
+      return parseHTML(sourceTemplate).data(data);
+    }
+
+    function parseHTML(htmlString = "", options) {
+      return {
+        data(data) {
+          return htmlString.replace(/\{\{(.+?)\}\}/g, (...args) => {
+            return args[1].split(".").reduce((data, currentValue) => {
+              return data[currentValue.trim()];
+            }, data);
+          });
+        },
+      };
+    }
+
+    function injecteClassname(classnames, target) {
+      let classList = "";
+
+      if (!classnames) {
+        return "";
+      }
+
+      if (Array.isArray(classnames)) {
+        classnames.forEach((classname) => (classList += ` ${classname}`));
+      }
+
+      if (typeof classnames === "string") {
+        classList += ` ${classnames}`;
+      }
+
+      target.classList = classList.trim();
+    }
+
+    const container = document.querySelector(".news-container");
+    function appendChildToContainer(HTMLConllection, target) {
+      target.appendChild(HTMLConllection);
+    }
+
+    const newsSource = [{}, {}, {}, {}, {}, {}, {}, {}, {}];
+
+    // start
+    appendChildToContainer(
+      generateNewsDocumentFragment(newsSource, {
+        classnames: "col-md-6 d-flex justify-content-between mt-4",
+      }),
+      container
+    );
+  </script>
+</html>
