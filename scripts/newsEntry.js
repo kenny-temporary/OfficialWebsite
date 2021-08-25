@@ -4,7 +4,7 @@ const {
 	resetData
 } = renderTo(".news-container");
 
-window.onload = function() {
+window.onload = function () {
 	loadMore();
 }
 
@@ -40,39 +40,38 @@ const pagination = new Pagination();
 pagination.setMaxPageSize(10);
 
 
-
 const previousFakeBtn = document.getElementById("previous-btn");
 const nextFakeBtn = document.getElementById("next-btn");
 
-function diasbleEleClick(target){
+function diasbleEleClick(target) {
 	target.classList.add("disable-click");
 }
 
-function removeDisableClick(target){
+function removeDisableClick(target) {
 	target.classList.remove("disable-click");
 }
 
-previousFakeBtn.addEventListener('click', function() {
+previousFakeBtn.addEventListener('click', function () {
 	pagination.previous();
 });
-
-nextFakeBtn.addEventListener('click', function() {
+nextFakeBtn.addEventListener('click', function () {
 	pagination.next();
 });
 
+// 默认禁用上一项
+diasbleEleClick(previousFakeBtn);
 pagination.onPageSizeChange(function onchane(id) {
-	debugger
-	if(id <= 0){
+	if (id <= 1) {
 		diasbleEleClick(previousFakeBtn);
 		removeDisableClick(nextFakeBtn);
 	}
-	
-	if(id > 1 && id < 10) {
+
+	if (id > 1 && id < 10) {
 		removeDisableClick(nextFakeBtn);
 		removeDisableClick(previousFakeBtn);
 	}
 
-	if(id >= 10){
+	if (id >= 10) {
 		diasbleEleClick(nextFakeBtn);
 		removeDisableClick(previousFakeBtn);
 	};
