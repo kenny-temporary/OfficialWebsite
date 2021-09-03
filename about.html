@@ -5,8 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./plugins/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/about.css" />
     <title>关于页</title>
   </head>
+
   <body>
     <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
       <div class="container">
@@ -46,10 +49,100 @@
       </div>
     </nav>
 
-    关于
+    <main class="container main-container-maintop content">
+      <div class="row my-lg-4">
+        <div id="map-container" class="col-lg-6 col-12 map-mobile"></div>
+        <div class="col-lg-6 col-12">
+          <span>
+            見出しや副見出し、表示見出しなどで装飾することで、font
+            sizeを変更できます。詳しい方法を解説しますので、一緒に見ていきましょう。
+            見出しや副見出し、表示見出しなどで装飾することで、font
+            sizeを変更できます。詳しい方法を解説しますので、一緒に見ていきましょう
+          </span>
+
+          <ul class="mt-4 enterprise-contact">
+            <li><span class="address">地点：成都市</span></li>
+            <li>邮箱: <a href="mailto:kenney6520@fanxiapp.com">kenney6520@fanxiapp.com </a> </li>
+            <li>企业电话: 540-1234-123</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+
+    <div class="container-fluid bg-dark bottom-container">sdnjks</div>
   </body>
+
   <script
     type="text/javascript"
     src="./plugins/bootstrap/bootstrap.bundle.min.js"
   ></script>
+
+  <script
+    type="text/javascript"
+    src="https://webapi.amap.com/maps?v=1.4.15&key=212b5e64e94a2fba56217c6dda29cf63"
+  ></script>
+
+  <script>
+    const map = new AMap.Map("map-container", {
+      resizeEnable: true,
+    });
+
+    const options = {
+      showButton: true, //是否显示定位按钮
+      buttonPosition: "LB", //定位按钮的位置
+      /* LT LB RT RB */
+      buttonOffset: new AMap.Pixel(10, 20),
+      showMarker: true,
+      markerOptions: {
+        offset: new AMap.Pixel(-18, -36),
+        content:
+          '<img src="https://a.amap.com/jsapi_demos/static/resource/img/user.png" style="width:36px;height:36px"/>',
+      },
+      showCircle: true, //是否显示定位精度圈
+      circleOptions: {
+        //定位精度圈的样式
+        strokeColor: "#0093FF",
+        noSelect: true,
+        strokeOpacity: 0.5,
+        strokeWeight: 1,
+        fillColor: "#02B0FF",
+        fillOpacity: 0.25,
+      },
+    };
+
+    AMap.plugin(["AMap.Geolocation"], function () {
+      const geolocation = new AMap.Geolocation(options);
+      map.addControl(geolocation);
+
+      AMap.event.addListener(geolocation, "complete", onComplete); //返回定位信息
+      AMap.event.addListener(geolocation, "error", onError); //返回定位出错信息
+
+      geolocation.getCurrentPosition();
+    });
+
+    function onComplete(data) {
+      const geocoder = new AMap.Geocoder({
+        city: "010", //城市设为北京，默认：“全国”
+        radius: 1000, //范围，默认：500
+      });
+
+      geocoder.getAddress(
+        `${data?.position?.lng},${data?.position?.lat}`,
+        function (status, data) {
+          if (status === "complete") {
+            const [targetContainer] =
+              document.getElementsByClassName("address");
+            targetContainer.innerHTML = `地点: ${data?.regeocode?.formattedAddress}`;
+          }
+          else {
+            targetContainer.innerHTML = '获取位置失败'
+          }
+        }
+      );
+    }
+
+    function onError(data) {
+      console.log("error -->", data);
+    }
+  </script>
 </html>

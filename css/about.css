@@ -1,0 +1,22 @@
+@media (min-width: 970px) {
+  .content {
+    height: 38vh;
+    /* background-color: antiquewhite; */
+  }
+
+  .bottom-container {
+    height: calc(100vh - 38vh - 56px);
+  }
+}
+
+@media screen and (max-width: 970px) {
+  .map-mobile {
+    height: 14rem;
+    /* margin-top: 1rem; */
+    margin-bottom: 1rem;
+  }
+}
+
+.enterprise-contact > li {
+  margin-top: 0.68rem;
+}

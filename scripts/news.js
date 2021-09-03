@@ -1,15 +1,15 @@
 const defaultTemplate = `
-            <div class="row mb-lg-4 mt-lg-4 mb-md-2 mt-md-2">
+            <div class="row mb-lg-4 mt-lg-4 mb-md-2 mt-md-2" onclick="handleViewDetails('{{id}}',event)">
               <div class="col-lg-5 col-md-12">
                 <img data-sizes="auto" data-src="./images/02.png" class="img-fluid safe-image lazyload" />
               </div>
-              <div class="col-lg-7 col-md-12 p-3">
+              <div class="col-lg-7 col-md-12 my-3">
                 <div class="lead" style="font-weight: bold;">
-                  見出しや副見出し、表示見出しなどで装飾することで
+                {{title}} 見出しや副見出し
                 </div>
             	<div class="text-black-50 my-2 small">
             		发布日期: {{date}} 
-					作者: {{name}}
+					作者: {{source}}
             	</div>
                 <p>見出しや副見出し、表示見出しなどで装飾することで、font sizeを変更できます。詳しい方法を解説しますので、一緒に見ていきましょう。</p>
               </div>

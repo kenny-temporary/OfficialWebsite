@@ -7,8 +7,22 @@
     margin-top: calc(56px + 70px + 1.5rem);
 }
 
+.pagination-item > li {
+    cursor: pointer;
+}
+
 .disable-click {
-	pointer-events: none;
-	cursor: not-allowed;
-	color: #eee;
+	/* pointer-events: none; */
+	/* cursor: not-allowed; */
+    color: rgb(158, 154, 154);
+    cursor: no-drop !important;
+}
+
+.disable-click:hover {
+    color: rgb(158, 154, 154);
+    cursor: no-drop !important;
+}
+
+.active {
+    background-color: rgba(0, 0, 0, 5);
 }
