@@ -11,11 +11,12 @@ const paginationWarpper = document.getElementById("pagination-warpper");
 const previousFakeBtn = document.getElementById("previous-btn");
 const nextFakeBtn = document.getElementById("next-btn");
 
+updatepaginationWarpperDisplay("none");
+
 /**
  * 初始化新闻页数据
  */
 window.onload = function () {
-  updatepaginationWarpperDisplay("none");
   loadMore({
     page: 1,
     type: updateUIType.Init,
