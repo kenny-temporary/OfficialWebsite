@@ -26,3 +26,13 @@
 .active {
     background-color: rgba(0, 0, 0, 5);
 }
+
+@media (max-width: 768px) {
+    .news-container {
+        margin-top: 1.0rem;
+    }
+
+    .md-news-title {
+        padding: 0.75rem var(--bs-gutter-x,.75rem);
+    }
+}

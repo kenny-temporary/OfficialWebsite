@@ -9,6 +9,7 @@ const StatusEnum = {
 const updateUIType = {
   Reset: "reset",
   Additional: "additional",
+  Init: "init",
 };
 
 class Pagination {

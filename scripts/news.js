@@ -103,5 +103,3 @@ function renderTo(container) {
 		}
     }
 }
-
-
