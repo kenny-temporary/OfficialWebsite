@@ -26,6 +26,7 @@ function updateNewsContent(data, newsId) {
     .data(formatedData(data?.images));
   const container = document.getElementById("newsContent");
   const newsTitle = document.getElementById("newsTitle");
+
   newsTitle.innerHTML = data?.title;
   container.innerHTML = htmlString;
 }

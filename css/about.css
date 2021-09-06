@@ -1,11 +1,11 @@
 @media (min-width: 970px) {
   .content {
-    height: 38vh;
+    height: 40vh;
     /* background-color: antiquewhite; */
   }
 
   .bottom-container {
-    height: calc(100vh - 38vh - 56px);
+    height: calc(100vh - 40vh - 56px);
   }
 }
 
@@ -19,4 +19,8 @@
 
 .enterprise-contact > li {
   margin-top: 0.68rem;
+}
+
+.overerve-parent {
+  height: 100%;
 }
